@@ -2,39 +2,144 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SGI - STEEL GARDEN INVESTMENT s.r.o.</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+    header {
+      background-color: #1f1f1f;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #333;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background: #575757;
+    }
+    .hero {
+      background-image: url('images/hero.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 36px;
+      text-shadow: 2px 2px 6px black;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    footer {
+      background: #1f1f1f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea {
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px;
+      background: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #575757;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>SGI - STEEL GARDEN INVESTMENT s.r.o.</h1>
-    <nav>
-      <a href="#kontakt">Kontakt</a>
-      <a href="#galerie">Galerie</a>
-    </nav>
+    <p>Výkup železa a kovového odpadu | Kaplice a okolí</p>
   </header>
+  
+  <nav>
+    <a href="#onas">O nás</a>
+    <a href="#sluzby">Služby</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
 
-  <main>
-    <section class="hero">
-      <h2>Výkup železa a kovového odpadu v Kaplici</h2>
-      <p>Výkup, ekologická likvidace a zpracování kovů.</p>
-    </section>
+  <div class="hero">
+    <div>Moderní výkup kovů v Jižních Čechách</div>
+  </div>
 
-    <section id="galerie">
-      <h3>Galerie</h3>
-      <img src="images/foto1.jpg" alt="Galerie 1">
-      <img src="images/foto2.jpg" alt="Galerie 2">
-    </section>
+  <section id="onas">
+    <h2>O nás</h2>
+    <p>Jsme spolehlivý partner v oblasti výkupu železa a barevných kovů v regionu Kaplice. Nabízíme férové ceny, profesionální přístup a rychlé odbavení. Disponujeme moderním vybavením a vlastní autodopravou.</p>
+  </section>
 
-    <section id="kontakt">
-      <h3>Kontaktujte nás</h3>
-      <p>Českobudějovická 409, 38241 Kaplice</p>
-      <p>IČ: 24178284, DIČ: CZ24178284</p>
-    </section>
-  </main>
+  <section id="sluzby">
+    <h2>Naše služby</h2>
+    <ul>
+      <li>Výkup železa a kovového odpadu</li>
+      <li>Výkup barevných kovů (měď, hliník, mosaz, bronz)</li>
+      <li>Přistavení kontejneru</li>
+      <li>Doprava a nakládka odpadu</li>
+    </ul>
+  </section>
+
+  <section id="galerie">
+    <h2>Galerie</h2>
+    <div class="gallery">
+      <img src="images/foto1.jpg" alt="Výkup kovu">
+      <img src="images/foto2.jpg" alt="Skladování">
+      <img src="images/foto3.jpg" alt="Manipulace">
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <h2>Kontaktujte nás</h2>
+    <form action="https://formspree.io/f/moqgoyvo" method="POST">
+      <input type="text" name="name" placeholder="Vaše jméno" required>
+      <input type="email" name="email" placeholder="Váš email" required>
+      <textarea name="message" rows="5" placeholder="Zpráva" required></textarea>
+      <button type="submit">Odeslat</button>
+    </form>
+  </section>
 
   <footer>
-    <p>&copy; 2025 SGI - STEEL GARDEN INVESTMENT s.r.o.</p>
+    <p>SGI - STEEL GARDEN INVESTMENT s.r.o. | Českobudějovická 409, 38241 Kaplice</p>
+    <p>IČ: 24178284 | DIČ: CZ24178284</p>
+    <p>&copy; 2025 steelgarden.cz</p>
   </footer>
 </body>
 </html>
