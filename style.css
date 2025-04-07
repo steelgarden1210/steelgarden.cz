@@ -1,1 +1,30 @@
-body { font-family: sans-serif; margin: 2em; background-color: #f4f4f4; } h1 { color: #333; }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: #333;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+nav a {
+  color: white;
+  margin: 0 1em;
+  text-decoration: none;
+}
+.hero {
+  background: #eee;
+  padding: 2em;
+  text-align: center;
+}
+section {
+  padding: 2em;
+}
+footer {
+  text-align: center;
+  background: #333;
+  color: white;
+  padding: 1em;
+}
