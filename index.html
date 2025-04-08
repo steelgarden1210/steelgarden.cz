@@ -144,6 +144,10 @@
       border-radius: 6px;
       overflow: hidden;
       z-index: 9998;
+      transition: all 0.3s ease-in-out;
+    }
+    .mobile-nav.visible {
+      display: flex;
     }
     .mobile-nav a {
       color: white;
@@ -174,7 +178,7 @@
   <script>
     function toggleMobileNav() {
       const nav = document.getElementById('mobileNav');
-      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+      nav.classList.toggle('visible');
     }
   </script>
 </head>
