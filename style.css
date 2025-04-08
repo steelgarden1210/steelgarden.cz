@@ -1,63 +1,72 @@
-
+/* Základní styly */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: #333;
 }
+
 header {
   background-color: #1f1f1f;
   color: white;
   padding: 20px;
   text-align: center;
-  position: relative;
 }
-.menu-toggle {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  background: none;
-  color: white;
-  border: none;
-  font-size: 24px;
-  display: none;
-}
+
 nav {
   background: #333;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
+
 nav a {
   color: white;
   padding: 14px 20px;
   text-decoration: none;
 }
+
 nav a:hover {
   background: #575757;
 }
+
 .hero {
-  background: #666;
-  height: 300px;
+  background-color: #444;
+  background-image: image-set(
+    url('images/hero.webp') type('image/webp'),
+    url('images/hero.jpg') type('image/jpeg')
+  );
+  background-size: cover;
+  background-position: center;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 32px;
+  font-size: 36px;
+  text-shadow: 2px 2px 6px black;
+  text-align: center;
+  padding: 0 10px;
+  font-weight: bold;
 }
+
 section {
   padding: 40px 20px;
   max-width: 1000px;
   margin: auto;
 }
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
 }
+
 .gallery img {
   width: 100%;
+  height: auto;
   border-radius: 8px;
 }
+
 footer {
   background: #1f1f1f;
   color: white;
@@ -65,15 +74,19 @@ footer {
   padding: 20px;
   margin-top: 40px;
 }
+
 form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-input, textarea {
+
+input,
+textarea {
   padding: 10px;
   font-size: 16px;
 }
+
 button {
   padding: 10px;
   background: #333;
@@ -81,28 +94,103 @@ button {
   border: none;
   cursor: pointer;
 }
+
 button:hover {
   background: #575757;
 }
-.map-container {
+
+/* Tlačítko - odkaz */
+.btn-link {
+  display: inline-block;
   margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 4px #0056b3;
+  text-align: center;
 }
-.map-container iframe {
+
+.btn-link:hover {
+  background-color: #0056b3;
+}
+
+.btn-link:active {
+  box-shadow: 0 2px #0056b3;
+  transform: translateY(2px);
+}
+
+/* Mapa */
+.map {
   width: 100%;
   height: 300px;
-  border: 0;
+  margin-top: 20px;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #333;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+}
+
+/* Mobilní navigace */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  background: #333;
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 9998;
+}
+
+.mobile-nav a {
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  border-top: 1px solid #444;
 }
 
 /* Responsivita */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
+  header h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
   }
+
+  header p {
+    font-size: 14px;
+  }
+
+  .hero {
+    font-size: 24px;
+    padding: 20px;
+  }
+
   nav {
-    flex-direction: column;
     display: none;
   }
-  nav.mobile-visible {
+
+  .hamburger {
     display: flex;
   }
 }
