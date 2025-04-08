@@ -33,7 +33,10 @@
     }
     .hero {
       background-color: #444;
-      background-image: url('images/hero.jpg');
+      background-image: image-set(
+        url('images/hero.webp') type('image/webp'),
+        url('images/hero.jpg') type('image/jpeg')
+      );
       background-size: cover;
       background-position: center;
       height: 400px;
@@ -178,7 +181,7 @@
     <a href="index.html#kontakt">Kontakt</a>
     <a href="ekologicka-likvidace.html">Ekologická likvidace vozidel</a>
   </nav>
-  <div class="hero">
+  <div class="hero" aria-label="Moderní výkup kovů v Jižních Čechách">
     <div>Moderní výkup kovů v Jižních Čechách</div>
   </div>
   <section id="onas">
