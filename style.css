@@ -161,6 +161,18 @@ button:hover {
   border-radius: 6px;
   overflow: hidden;
   z-index: 9998;
+  transition: all 0.3s ease-in-out;
+}
+
+.mobile-nav.visible {
+  display: flex;
+}
+
+.mobile-nav a {
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  border-top: 1px solid #444;
 }
 
 .mobile-nav a {
