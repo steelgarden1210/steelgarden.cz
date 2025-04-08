@@ -1,4 +1,6 @@
-
-document.querySelector('.menu-toggle').addEventListener('click', () => {
-  document.querySelector('nav').classList.toggle('mobile-visible');
-});
+<script>
+  function toggleMobileNav() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('visible');
+  }
+</script>
