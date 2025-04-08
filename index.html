@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SGI - STEEL GARDEN INVESTMENT sro</title>
+  <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="stylesheet" href="style.css">
   <style>
     body {
@@ -96,21 +97,28 @@
       margin-top: 20px;
     }
     .btn-link {
-      display: inline-block;
-      margin: 40px auto;
-      padding: 20px 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 80px auto;
+      padding: 28px 48px;
       background-color: #007bff;
       color: white;
       text-decoration: none;
-      border-radius: 10px;
-      font-size: 20px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-      transform: rotate(-1deg);
+      border-radius: 20px;
+      font-size: 28px;
+      box-shadow: 0 14px 28px rgba(0,0,0,0.45);
       text-align: center;
-      width: fit-content;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
     .btn-link:hover {
       background-color: #0056b3;
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .btn-link span {
+      margin-left: 10px;
+      font-size: 22px;
     }
     .hamburger {
       display: none;
@@ -172,6 +180,13 @@
       const nav = document.getElementById('mobileNav');
       nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
     }
+    document.addEventListener('click', function(event) {
+      const nav = document.getElementById('mobileNav');
+      const hamburger = document.querySelector('.hamburger');
+      if (nav.style.display === 'flex' && !nav.contains(event.target) && !hamburger.contains(event.target)) {
+        nav.style.display = 'none';
+      }
+    });
   </script>
 </head>
 <body>
@@ -179,7 +194,7 @@
     <h1>SGI - STEEL GARDEN INVESTMENT sro</h1>
     <p>Výkup železa a kovového odpadu | Kaplice a okolí</p>
   </header>
-  <nav>
+  <nav role="navigation" aria-label="Hlavní navigace">
     <a href="#onas">O nás</a>
     <a href="#sluzby">Služby</a>
     <a href="#galerie">Galerie</a>
@@ -192,7 +207,9 @@
   <section id="onas">
     <h2>O nás</h2>
     <p>Jsme spolehlivým partnerem v oblasti výkupu železa a barevných kovů v regionu Kaplice. Nabízíme férové ​​ceny, profesionální přístup a rychlé odbavení. Disponujeme moderním vybavením a vlastní autodopravou.</p>
-    <a class="btn-link" href="ekologicka-likvidace.html">Ekologická likvidace vozidel</a>
+    <a class="btn-link" href="ekologicka-likvidace.html" aria-label="Přejít na stránku ekologické likvidace vozidel">
+      ♻ Ekologická likvidace vozidel
+    </a>
   </section>
   <section id="sluzby">
     <h2>Naše služby</h2>
@@ -213,11 +230,14 @@
   </section>
   <section id="kontakt">
     <h2>Kontaktujte nás</h2>
-    <form action="https://formspree.io/f/moqgoyvo" method="POST">
-      <input type="text" name="name" placeholder="Vaše jméno" required>
-      <input type="email" name="email" placeholder="Váš email" required>
-      <textarea name="message" rows="5" placeholder="Zpráva" required></textarea>
-      <button type="submit">Odeslat</button>
+    <form action="https://formspree.io/f/moqgoyvo" method="POST" aria-label="Kontaktní formulář">
+      <fieldset>
+        <legend>Zanechte nám zprávu</legend>
+        <input type="text" name="name" placeholder="Vaše jméno" required aria-label="Jméno">
+        <input type="email" name="email" placeholder="Váš email" required aria-label="Email">
+        <textarea name="message" rows="5" placeholder="Zpráva" required aria-label="Zpráva"></textarea>
+        <button type="submit">Odeslat</button>
+      </fieldset>
     </form>
     <div class="map">
       <iframe src="https://maps.google.com/maps?q=%C4%8Ceskobud%C4%9Bjovick%C3%A1%20409,%2038241%20Kaplice&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0; width:100%; height:100%;" allowfullscreen></iframe>
@@ -228,7 +248,7 @@
     <p>IČ: 24178284 | DIČ: CZ24178284</p>
     <p>© 2025 steelgarden.cz</p>
   </footer>
-  <div class="hamburger" onclick="toggleMobileNav()">
+  <div class="hamburger" onclick="toggleMobileNav()" aria-label="Mobilní navigace" role="button">
     <div></div>
     <div></div>
     <div></div>
