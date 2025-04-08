@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SGI - STEEL GARDEN INVESTMENT s.r.o.</title>
+  <title>SGI - STEEL GARDEN INVESTMENT sro</title>
   <link rel="stylesheet" href="style.css">
   <style>
     body {
@@ -32,6 +32,7 @@
       background: #575757;
     }
     .hero {
+      background-color: #444;
       background-image: url('images/hero.jpg');
       background-size: cover;
       background-position: center;
@@ -91,8 +92,18 @@
       height: 300px;
       margin-top: 20px;
     }
-
-    /* Hamburger menu */
+    .btn-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .btn-link:hover {
+      background-color: #0056b3;
+    }
     .hamburger {
       display: none;
       flex-direction: column;
@@ -111,7 +122,6 @@
       background: white;
       margin: 4px 0;
     }
-
     .mobile-nav {
       display: none;
       flex-direction: column;
@@ -129,7 +139,6 @@
       text-decoration: none;
       border-top: 1px solid #444;
     }
-
     @media (max-width: 768px) {
       header h1 {
         font-size: 20px;
@@ -159,36 +168,33 @@
 </head>
 <body>
   <header>
-    <h1>SGI - STEEL GARDEN INVESTMENT s.r.o.</h1>
+    <h1>SGI - STEEL GARDEN INVESTMENT sro</h1>
     <p>Výkup železa a kovového odpadu | Kaplice a okolí</p>
   </header>
-
   <nav>
-    <a href="#onas">O nás</a>
-    <a href="#sluzby">Služby</a>
-    <a href="#galerie">Galerie</a>
-    <a href="#kontakt">Kontakt</a>
+    <a href="index.html#onas">O nás</a>
+    <a href="index.html#sluzby">Služby</a>
+    <a href="index.html#galerie">Galerie</a>
+    <a href="index.html#kontakt">Kontakt</a>
+    <a href="ekologicka-likvidace.html">Ekologická likvidace vozidel</a>
   </nav>
-
   <div class="hero">
     <div>Moderní výkup kovů v Jižních Čechách</div>
   </div>
-
   <section id="onas">
     <h2>O nás</h2>
-    <p>Jsme spolehlivý partner v oblasti výkupu železa a barevných kovů v regionu Kaplice. Nabízíme férové ceny, profesionální přístup a rychlé odbavení. Disponujeme moderním vybavením a vlastní autodopravou.</p>
+    <p>Jsme spolehlivým partnerem v oblasti výkupu železa a barevných kovů v regionu Kaplice. Nabízíme férové ​​ceny, profesionální přístup a rychlé odbavení. Disponujeme moderním vybavením a vlastní autodopravou.</p>
+    <a class="btn-link" href="ekologicka-likvidace.html">Ekologická likvidace vozidel</a>
   </section>
-
   <section id="sluzby">
     <h2>Naše služby</h2>
     <ul>
       <li>Výkup železa a kovového odpadu</li>
       <li>Výkup barevných kovů (měď, hliník, mosaz, bronz)</li>
       <li>Přistavení kontejneru</li>
-      <li>Doprava a nakládka odpadu</li>
+      <li>Doprava a nakládání odpadu</li>
     </ul>
   </section>
-
   <section id="galerie">
     <h2>Galerie</h2>
     <div class="gallery">
@@ -197,7 +203,6 @@
       <img src="images/foto3.jpg" alt="Manipulace">
     </div>
   </section>
-
   <section id="kontakt">
     <h2>Kontaktujte nás</h2>
     <form action="https://formspree.io/f/moqgoyvo" method="POST">
@@ -207,26 +212,25 @@
       <button type="submit">Odeslat</button>
     </form>
     <div class="map">
-      <iframe src="https://maps.google.com/maps?q=%C4%8Ceskobud%C4%9Bjovick%C3%A1%20409,%2038241%20Kaplice&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <iframe src="https://maps.google.com/maps?q=%C4%8Ceskobud%C4%9Bjovick%C3%A1%20409,%2038241%20Kaplice&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0; width:100%; height:100%;" allowfullscreen></iframe>
     </div>
   </section>
-
   <footer>
-    <p>SGI - STEEL GARDEN INVESTMENT s.r.o. | Českobudějovická 409, 38241 Kaplice</p>
+    <p>SGI - STEEL GARDEN INVESTMENT sro | Českobudějovická 409, 38241 Kaplice</p>
     <p>IČ: 24178284 | DIČ: CZ24178284</p>
-    <p>&copy; 2025 steelgarden.cz</p>
+    <p>© 2025 steelgarden.cz</p>
   </footer>
-
   <div class="hamburger" onclick="toggleMobileNav()">
     <div></div>
     <div></div>
     <div></div>
   </div>
   <div class="mobile-nav" id="mobileNav">
-    <a href="#onas" onclick="toggleMobileNav()">O nás</a>
-    <a href="#sluzby" onclick="toggleMobileNav()">Služby</a>
-    <a href="#galerie" onclick="toggleMobileNav()">Galerie</a>
-    <a href="#kontakt" onclick="toggleMobileNav()">Kontakt</a>
+    <a href="index.html#onas" onclick="toggleMobileNav()">O nás</a>
+    <a href="index.html#sluzby" onclick="toggleMobileNav()">Služby</a>
+    <a href="index.html#galerie" onclick="toggleMobileNav()">Galerie</a>
+    <a href="index.html#kontakt" onclick="toggleMobileNav()">Kontakt</a>
+    <a href="ekologicka-likvidace.html" onclick="toggleMobileNav()">Ekologická likvidace</a>
   </div>
 </body>
 </html>
