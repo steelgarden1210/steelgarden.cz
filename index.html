@@ -5,16 +5,165 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SGI - STEEL GARDEN INVESTMENT s.r.o.</title>
   <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+    header {
+      background-color: #1f1f1f;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #333;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background: #575757;
+    }
+    .hero {
+      background-image: url('images/hero.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 36px;
+      text-shadow: 2px 2px 6px black;
+      text-align: center;
+      padding: 0 10px;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    footer {
+      background: #1f1f1f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea {
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px;
+      background: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #575757;
+    }
+    .map {
+      width: 100%;
+      height: 300px;
+      margin-top: 20px;
+    }
+
+    /* Hamburger menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #333;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 9999;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      bottom: 70px;
+      right: 20px;
+      background: #333;
+      border-radius: 6px;
+      overflow: hidden;
+      z-index: 9998;
+    }
+    .mobile-nav a {
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      border-top: 1px solid #444;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      header p {
+        font-size: 14px;
+      }
+      .hero {
+        font-size: 24px;
+        padding: 20px;
+      }
+      nav {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+  <script>
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
 </head>
 <body>
   <header>
     <h1>SGI - STEEL GARDEN INVESTMENT s.r.o.</h1>
     <p>Výkup železa a kovového odpadu | Kaplice a okolí</p>
-    <button class="menu-toggle" aria-label="Menu">&#9776;</button>
   </header>
-  
-  <nav class="mobile-hidden">
+
+  <nav>
     <a href="#onas">O nás</a>
     <a href="#sluzby">Služby</a>
     <a href="#galerie">Galerie</a>
@@ -27,7 +176,7 @@
 
   <section id="onas">
     <h2>O nás</h2>
-    <p>Jsme spolehlivý partner v oblasti výkupu železa a barevných kovů v regionu Kaplice.</p>
+    <p>Jsme spolehlivý partner v oblasti výkupu železa a barevných kovů v regionu Kaplice. Nabízíme férové ceny, profesionální přístup a rychlé odbavení. Disponujeme moderním vybavením a vlastní autodopravou.</p>
   </section>
 
   <section id="sluzby">
@@ -57,9 +206,8 @@
       <textarea name="message" rows="5" placeholder="Zpráva" required></textarea>
       <button type="submit">Odeslat</button>
     </form>
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps?q=Českobudějovická+409,+38241+Kaplice,+Česká+republika&output=embed"
-              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="map">
+      <iframe src="https://maps.google.com/maps?q=%C4%8Ceskobud%C4%9Bjovick%C3%A1%20409,%2038241%20Kaplice&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
   </section>
 
@@ -68,5 +216,17 @@
     <p>IČ: 24178284 | DIČ: CZ24178284</p>
     <p>&copy; 2025 steelgarden.cz</p>
   </footer>
+
+  <div class="hamburger" onclick="toggleMobileNav()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#onas" onclick="toggleMobileNav()">O nás</a>
+    <a href="#sluzby" onclick="toggleMobileNav()">Služby</a>
+    <a href="#galerie" onclick="toggleMobileNav()">Galerie</a>
+    <a href="#kontakt" onclick="toggleMobileNav()">Kontakt</a>
+  </div>
 </body>
 </html>
