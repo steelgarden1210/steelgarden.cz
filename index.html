@@ -48,16 +48,17 @@
       align-items: center;
       justify-content: center;
       color: white;
+      font-size: 36px;
+      text-shadow: 2px 2px 6px black;
       text-align: center;
       padding: 0 10px;
       position: relative;
     }
-    .hero-text {
-      font-size: 48px;  /* Zvětšení textu */
-      font-weight: bold;
-      text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);  /* Silnější stín pro vystoupení textu */
+    .hero div {
       position: relative;
       z-index: 1;
+      font-size: 36px;
+      font-weight: bold;
     }
     .hero::after {
       content: "";
@@ -190,6 +191,19 @@
       }
     }
   </style>
+  <script>
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    }
+    document.addEventListener('click', function(event) {
+      const nav = document.getElementById('mobileNav');
+      const hamburger = document.querySelector('.hamburger');
+      if (nav.style.display === 'flex' && !nav.contains(event.target) && !hamburger.contains(event.target)) {
+        nav.style.display = 'none';
+      }
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -202,14 +216,16 @@
     <a href="#galerie">Galerie</a>
     <a href="#kontakt">Kontakt</a>
     <a href="ekologicka-likvidace.html">Ekologická likvidace vozidel</a>
+    <a href="vykup-srotu.html">Výkup šrotu</a> <!-- Nové tlačítko pro výkup šrotu -->
   </nav>
   <div class="hero" aria-label="Ekologická likvidace vozidel">
-    <div class="hero-text">Ekologická likvidace vozidel</div>
+    <div>Ekologická likvidace vozidel</div>
   </div>
   <section id="onas">
     <h2>O nás</h2>
     <p>Jsme spolehlivým partnerem v oblasti výkupu železa a barevných kovů v regionu Jižní Čechy. Nabízíme férové ceny, profesionální přístup a rychlé odbavení. Disponujeme moderním vybavením a vlastní autodopravou.</p>
     <a class="btn-link" href="ekologicka-likvidace.html" aria-label="Přejít na stránku ekologické likvidace vozidel">Ekologická likvidace vozidel</a>
+    <a class="btn-link" href="vykup-srotu.html" aria-label="Přejít na stránku výkup šrotu">Výkup šrotu</a> <!-- Odkaz na novou stránku výkup šrotu -->
   </section>
   <section id="sluzby">
     <h2>Naše služby</h2>
@@ -217,7 +233,6 @@
       <li>Výkup železa a kovového odpadu</li>
       <li>Výkup barevných kovů (měď, hliník, mosaz, bronz)</li>
       <li>Doprava a nakládání odpadu</li>
-      <li><a href="vykup-srotu.html" class="btn-link">Výkup šrotu</a></li> <!-- Opraveno tlačítko Výkup šrotu -->
     </ul>
   </section>
   <section id="galerie">
@@ -256,6 +271,7 @@
     <a href="#galerie" onclick="toggleMobileNav()">Galerie</a>
     <a href="#kontakt" onclick="toggleMobileNav()">Kontakt</a>
     <a href="ekologicka-likvidace.html" onclick="toggleMobileNav()">Ekologická likvidace</a>
+    <a href="vykup-srotu.html" onclick="toggleMobileNav()">Výkup šrotu</a>
   </div>
 </body>
 </html>
