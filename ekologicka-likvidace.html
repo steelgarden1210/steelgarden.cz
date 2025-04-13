@@ -74,16 +74,19 @@
     }
 
     button {
-      padding: 10px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
+  padding: 10px;
+  background: #007bff; /* modrá */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+button:hover {
+  background: #0056b3; /* tmavší modrá */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
 
     .hamburger {
       display: none;
