@@ -12,37 +12,67 @@
       padding: 0;
       color: #333;
     }
-    header, footer {
+
+    header {
       background-color: #1f1f1f;
       color: white;
       text-align: center;
       padding: 20px;
     }
+
+    header h1 {
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: block;
+    }
+
+    nav a:hover {
+      background: #575757;
+    }
+
     section {
       max-width: 1000px;
       margin: 40px auto;
       padding: 0 20px;
     }
+
     h1, h2 {
-      color: #007bff;
+      color: #000;
     }
+
     a {
       color: #007bff;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
     form {
       display: flex;
       flex-direction: column;
       gap: 10px;
       margin-top: 30px;
     }
+
     input, textarea {
       padding: 10px;
       font-size: 16px;
     }
+
     button {
       padding: 10px;
       background-color: #007bff;
@@ -50,6 +80,7 @@
       border: none;
       cursor: pointer;
     }
+
     button:hover {
       background-color: #0056b3;
     }
@@ -97,14 +128,26 @@
       .hamburger {
         display: flex;
       }
+
+      nav {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Ekologická likvidace vozidel</h1>
-    <p>SGI - STEEL GARDEN INVESTMENT sro | Kaplice a okolí</p>
+    <p>SGI - STEEL GARDEN INVESTMENT s.r.o. | Kaplice a okolí</p>
   </header>
+
+  <!-- Navigace jako na index.html -->
+  <nav role="navigation">
+    <a href="index.html">Domů</a>
+    <a href="vykup-srotu.html">Výkup šrotu</a>
+    <a href="galerie.html">Galerie</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
 
   <!-- Hamburger menu -->
   <div class="hamburger" id="hamburger">
@@ -115,7 +158,7 @@
 
   <nav class="mobile-nav" id="mobileNav">
     <a href="index.html">Domů</a>
-    <a href="ekologicka-likvidace.html">Ekologická likvidace</a>
+    <a href="vykup-srotu.html">Výkup šrotu</a>
     <a href="galerie.html">Galerie</a>
     <a href="kontakt.html">Kontakt</a>
   </nav>
@@ -144,7 +187,7 @@
   </section>
 
   <footer>
-    <p>SGI - STEEL GARDEN INVESTMENT sro | Českobudějovická 409, 38241 Kaplice</p>
+    <p>SGI - STEEL GARDEN INVESTMENT s.r.o. | Českobudějovická 409, 38241 Kaplice</p>
     <p>IČ: 24178284 | DIČ: CZ24178284</p>
     <p>&copy; 2025 steelgarden.cz</p>
   </footer>
