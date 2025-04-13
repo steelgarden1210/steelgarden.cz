@@ -74,19 +74,20 @@
     }
 
     button {
-  padding: 10px;
-  background: #007bff; /* modrá */
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background 0.3s, box-shadow 0.3s;
-}
-button:hover {
-  background: #0056b3; /* tmavší modrá */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+
+    button:hover {
+      background: #0056b3;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
 
     .hamburger {
       display: none;
@@ -136,6 +137,25 @@ button:hover {
         display: none;
       }
     }
+
+    .metals-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px 30px;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .metals-grid div {
+      display: flex;
+      align-items: center;
+    }
+
+    .recycle-icon {
+      color: #007bff;
+      margin-right: 8px;
+      font-size: 20px;
+    }
   </style>
 </head>
 <body>
@@ -144,14 +164,12 @@ button:hover {
     <p>SGI - STEEL GARDEN INVESTMENT s.r.o. | Jižní Čechy</p>
   </header>
 
-  <!-- Navigace jako na index.html -->
   <nav role="navigation">
     <a href="index.html">Domů</a>
     <a href="ekologicka-likvidace.html">Ekologická likvidace vozidel</a>
     <a href="kontakt.html">Kontakt</a>
   </nav>
 
-  <!-- Hamburger menu -->
   <div class="hamburger" id="hamburger">
     <div></div>
     <div></div>
@@ -166,18 +184,20 @@ button:hover {
 
   <section>
     <h2>Jaké kovy vykupujeme?</h2>
-     <li>Železo</li>
-     <li>Litinu</li>
-     <li>Barevné kovy</li>
-     <li>Hliník</li>
-     <li>Měď</li>
-     <li>Bronz</li>
-     <li>Mosaz</li>
-     <li>Olovo</li>
-     <li>Zinek</li>
-     <li>Nerez</li>
-     <li>Kabely</li>
-     <li>Autobaterir</li>
+    <div class="metals-grid">
+      <div><span class="recycle-icon">♻️</span> Železo</div>
+      <div><span class="recycle-icon">♻️</span> Litinu</div>
+      <div><span class="recycle-icon">♻️</span> Barevné kovy</div>
+      <div><span class="recycle-icon">♻️</span> Hliník</div>
+      <div><span class="recycle-icon">♻️</span> Měď</div>
+      <div><span class="recycle-icon">♻️</span> Bronz</div>
+      <div><span class="recycle-icon">♻️</span> Mosaz</div>
+      <div><span class="recycle-icon">♻️</span> Olovo</div>
+      <div><span class="recycle-icon">♻️</span> Zinek</div>
+      <div><span class="recycle-icon">♻️</span> Nerez</div>
+      <div><span class="recycle-icon">♻️</span> Kabely</div>
+      <div><span class="recycle-icon">♻️</span> Autobaterie</div>
+    </div>
 
     <h2>Jak výkup probíhá?</h2>
     <ul>
