@@ -27,16 +27,18 @@
 
     nav {
       background: #333;
-      display: flex;
+      display: none;
       justify-content: center;
       flex-wrap: wrap;
-      display: none;
+      width: 100%;
+      text-align: center;
     }
 
     nav a {
       color: white;
       padding: 14px 20px;
       text-decoration: none;
+      display: block;
     }
 
     nav a:hover {
@@ -49,18 +51,19 @@
       top: 20px;
       right: 20px;
       cursor: pointer;
+      z-index: 9999;
     }
 
     .hamburger div {
-      width: 25px;
-      height: 3px;
+      width: 30px;
+      height: 4px;
       background-color: white;
-      margin: 5px 0;
+      margin: 6px 0;
       transition: 0.4s;
     }
 
     .menu-active {
-      display: block;
+      display: flex;
     }
 
     section {
@@ -96,21 +99,9 @@
       margin: 5px 0;
     }
 
-    .map {
-      margin-top: 40px;
-    }
-
-    footer {
-      background: #1f1f1f;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
     .button-container {
       text-align: center;
-      margin-top: 20px;
+      margin: 60px 0; /* Zvětšená mezera nad i pod tlačítkem */
     }
 
     .button-container a {
@@ -120,37 +111,58 @@
       text-decoration: none;
       border-radius: 20px;
       font-size: 20px;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     .button-container a:hover {
       background-color: #0056b3;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .map {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+      display: block;
+    }
+
+    footer {
+      background: #1f1f1f;
+      color: white;
+      text-align: center;
+      padding: 20px;
     }
 
     @media (max-width: 768px) {
       .contact-info {
         grid-template-columns: 1fr;
       }
+
       header {
         padding: 10px;
       }
+
       h2 {
         font-size: 24px;
       }
+
       .hamburger {
         display: block;
       }
-      nav {
-        width: 100%;
-        text-align: center;
-        display: none;
-      }
+
       nav a {
-        display: block;
         padding: 15px;
       }
+
       nav.menu-active {
-        display: block;
+        display: flex;
+        flex-direction: column;
       }
     }
   </style>
@@ -165,7 +177,7 @@
       <div></div>
     </div>
   </header>
-  
+
   <nav role="navigation">
     <a href="index.html">Domů</a>
     <a href="ekologicka-likvidace.html">Ekologická likvidace vozidel</a>
@@ -196,7 +208,7 @@
     </div>
 
     <div class="map">
-      <iframe src="https://maps.google.com/maps?q=%C4%8Ceskobud%C4%9Bjovick%C3%A1%20409,%2038241%20Kaplice&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0; width:100%; height:400px;" allowfullscreen title="Mapa - Steel Garden Investment s.r.o."></iframe>
+      <iframe src="https://maps.google.com/maps?q=%C4%8Ceskobud%C4%9Bjovick%C3%A1%20409,%2038241%20Kaplice&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen title="Mapa - Steel Garden Investment s.r.o."></iframe>
     </div>
   </section>
 
