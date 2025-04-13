@@ -35,25 +35,26 @@
     nav a:hover {
       background: #575757;
     }
-    .hero {
-      background-color: #444;
-      background-image: image-set(
-        url('images/hero.webp') type('image/webp'),
-        url('images/hero.jpg') type('image/jpeg')
-      );
-      background-size: cover;
-      background-position: center;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 36px;
-      text-shadow: 2px 2px 6px black;
-      text-align: center;
-      padding: 0 10px;
-      position: relative;
-    }
+   .hero {
+  background-color: #444;
+  background-image: url('images/hero.jpg'); /* fallback pro starší zařízení */
+  background-image: image-set(
+    url('images/hero.webp') type('image/webp'),
+    url('images/hero.jpg') type('image/jpeg')
+  );
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 36px;
+  text-shadow: 2px 2px 6px black;
+  text-align: center;
+  padding: 0 10px;
+  position: relative;
+}
     .hero div {
   position: relative;
   z-index: 1;
