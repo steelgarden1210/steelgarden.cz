@@ -141,11 +141,28 @@
     .metals-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px 30px;
+  gap: 8px 16px; /* menší mezery mezi řádky a sloupci */
   margin-top: 20px;
   font-size: 18px;
-  padding-left: 20px; /* posun doprava */
+  padding-left: 20px;
 }
+
+/* Responzivní úprava pro mobily */
+@media (max-width: 768px) {
+  .metals-grid {
+    grid-template-columns: repeat(2, 1fr); /* na mobilu 2 sloupce */
+    padding-left: 10px; /* menší okraj */
+    gap: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .metals-grid {
+    grid-template-columns: 1fr; /* na hodně malých displejích 1 sloupec */
+    padding-left: 10px;
+  }
+}
+
 
 
     .metals-grid div {
